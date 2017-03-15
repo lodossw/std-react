@@ -1,15 +1,12 @@
-var Greeter = React.createClass({
-    render: function(){
-        return (
+class Greeter extends React.Component {
+    render() {
+        return ( 
             <div>
-              <h1>Hello Component (React.createClass) </h1>
-              <p>This is From A-Component</p>
+              <h1>Hello React (with class)</h1>
+              <p>This is From B-Component</p> 
             </div>
         );
     }
-});
+}
 
-ReactDOM.render(
-   <Greeter/>,
-   document.getElementById("app")
-);
+ReactDOM.render( <Greeter/>, document.getElementById("app"));
