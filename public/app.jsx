@@ -1,18 +1,43 @@
 class Greeter extends React.Component {
 
+    //-- 생성자 
     constructor(props) {
+
         super(props);
+        
+        this.defaultProps = {
+            name : 'Mary',
+            message : 'oops!'
+        };
+
+        //console.log(!this.props.age);
+        //-- 기본 State 값 
+        this.state = {
+            name : this.props.name
+        }; // getDefaultState() on React.createClass() only
+
+        // EventHandler 등록 
         this.onButtonClick = this.onButtonClick.bind(this);
     }
 
+    //-- Button Click Event Handler 
     onButtonClick(event) {
+        
         event.preventDefault();
-        var name = this.refs.name.value; 
-        alert(name);
+
+        var nameRef = this.refs.name; 
+        var name = nameRef.value;
+        nameRef.value = ''; // submit 후 값 비우기 
+
+        if( typeof name == 'string' && name.length > 0) {
+            this.setState({ name : name })
+        }
+
+        // this.props.message = "이거되냐?"; error props 는 읽기전용 속성임.
     } 
 
     render() {
-        var name = this.props.name;
+        var name = this.state.name;
         var message = this.props.message; 
         
         return ( 
@@ -35,16 +60,28 @@ class Greeter extends React.Component {
 Greeter.propTypes = {
   name: React.PropTypes.string
 };
-*/
-    
-Greeter.defaultProps = {
+
+Greeter.getDefaultProp = {
   name: 'Mary',
   message: 'oops!'
+};
+*/
+
+class Test extends React.Component {
+    render() {
+        return (
+            <div>
+                <Greeter name={firstName} message="Message from prop!" />
+                {/*<Greeter name={firstName} message="Message from prop!" />
+                <Greeter name={firstName} message="Message from prop!" />*/}
+            </div>
+        )
+    }
 };
 
 var firstName = 'killer'; 
 
 ReactDOM.render( 
-    <Greeter name={firstName} message="Message from prop!" />, 
+    <Test/>, 
     document.getElementById("app")
 );
