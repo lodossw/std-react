@@ -5,3 +5,5 @@ Without webpack / npm install babel, react, react-dom
 
 https://babeljs.io/repl/  
 ES6 -> ES5
+
+https://facebook.github.io/react/docs/react-without-es6.html
