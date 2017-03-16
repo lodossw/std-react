@@ -5,11 +5,6 @@ class Greeter extends React.Component {
 
         super(props);
         
-        this.defaultProps = {
-            name : 'Mary',
-            message : 'oops!'
-        };
-
         //console.log(!this.props.age);
         //-- 기본 State 값 
         this.state = {
@@ -56,32 +51,12 @@ class Greeter extends React.Component {
     }
 };
 
-/*
-Greeter.propTypes = {
-  name: React.PropTypes.string
-};
-
-Greeter.getDefaultProp = {
+Greeter.defaultProps = {
   name: 'Mary',
   message: 'oops!'
-};
-*/
-
-class Test extends React.Component {
-    render() {
-        return (
-            <div>
-                <Greeter name={firstName} message="Message from prop!" />
-                {/*<Greeter name={firstName} message="Message from prop!" />
-                <Greeter name={firstName} message="Message from prop!" />*/}
-            </div>
-        )
-    }
-};
-
-var firstName = 'killer'; 
+}
 
 ReactDOM.render( 
-    <Test/>, 
+    <Greeter/>, 
     document.getElementById("app")
 );
