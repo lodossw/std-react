@@ -1,87 +1,85 @@
-class Greeter extends React.Component {
-
-    //-- 생성자 
-    constructor(props) {
-
-        super(props);
+class GreeterMessage extends React.Component {
+    render() {
         
-        this.defaultProps = {
-            name : 'Mary',
-            message : 'oops!'
-        };
+        var name = this.props.name; 
+        var message = this.props.message; 
 
-        //console.log(!this.props.age);
-        //-- 기본 State 값 
-        this.state = {
-            name : this.props.name
-        }; // getDefaultState() on React.createClass() only
+        return (
+            <div>
+                <h1>Hello {name}</h1>
+                <p>{message}</p> 
+            </div> 
+        );
+    }
+}
 
-        // EventHandler 등록 
-        this.onButtonClick = this.onButtonClick.bind(this);
+class GreeterForm extends React.Component {
+    
+    constructor(props) {
+        super(props); 
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    //-- Button Click Event Handler 
-    onButtonClick(event) {
-        
+    onFormSubmit(event) {
         event.preventDefault();
-
-        var nameRef = this.refs.name; 
-        var name = nameRef.value;
-        nameRef.value = ''; // submit 후 값 비우기 
-
-        if( typeof name == 'string' && name.length > 0) {
-            this.setState({ name : name })
+        var name = this.refs.name.value; 
+        if(name.length > 0) {
+            this.refs.name.value = '';
+            this.props.onNewName(name);
         }
-
-        // this.props.message = "이거되냐?"; error props 는 읽기전용 속성임.
-    } 
+    }
 
     render() {
-        var name = this.state.name;
-        var message = this.props.message; 
-        
-        return ( 
-            <div>
-              <h1>Hello {name}!!</h1>
-              <h1>{message + '!!'}</h1>
-              
-              {/*<form onSubmit={(event) => this.onButtonClick(event)}*/}
-              <form onSubmit={this.onButtonClick}>
+        return (
+              <form onSubmit={this.onFormSubmit}>
                 <input type="text" ref="name"/>
                 <button>Set Name</button>
               </form> 
-            
+        );
+    }
+}
+
+
+class Greeter extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { name : this.props.name };
+        this.handleNewName = this.handleNewName.bind(this);
+    }
+
+    handleNewName( _name ) {
+        this.setState({
+            name : _name
+        });
+    } 
+
+    render() {
+
+        var name = this.state.name; 
+        var message = this.props.message; 
+
+        return ( 
+            <div>
+              <GreeterMessage name={name} message={message}/>
+              <GreeterForm onNewName={this.handleNewName}/>
             </div>
         );
     }
 };
 
-/*
 Greeter.propTypes = {
-  name: React.PropTypes.string
+  name : React.PropTypes.string,
+  message : React.PropTypes.string
 };
 
-Greeter.getDefaultProp = {
-  name: 'Mary',
-  message: 'oops!'
-};
-*/
-
-class Test extends React.Component {
-    render() {
-        return (
-            <div>
-                <Greeter name={firstName} message="Message from prop!" />
-                {/*<Greeter name={firstName} message="Message from prop!" />
-                <Greeter name={firstName} message="Message from prop!" />*/}
-            </div>
-        )
-    }
+Greeter.defaultProps = { // static
+    name : 'Harry',
+    message : 'This is default message'
 };
 
-var firstName = 'killer'; 
 
 ReactDOM.render( 
-    <Test/>, 
+    <Greeter />, 
     document.getElementById("app")
 );
