@@ -68,11 +68,9 @@ class Greeter extends React.Component {
     }
 };
 
-Greeter.propTypes = {
-  name : React.PropTypes.string,
-  message : React.PropTypes.string
-};
 
+
+//-- 기본 Props 
 Greeter.defaultProps = { // static
     name : 'Harry',
     message : 'This is default message'
@@ -83,3 +81,4 @@ ReactDOM.render(
     <Greeter />, 
     document.getElementById("app")
 );
+
