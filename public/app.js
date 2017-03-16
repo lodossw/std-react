@@ -42,9 +42,8 @@ Greeter.defaultProps = {
   message: 'oops!'
 };
 
-var firstName = 'killer'; 
 
 ReactDOM.render( 
-    <Greeter name={firstName} message="Message from prop!" />, 
+    <Greeter message="Message from prop!" />, 
     document.getElementById("app")
 );
