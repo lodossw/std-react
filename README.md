@@ -5,7 +5,6 @@
 ~~~~console
 npm install -g webpack@1.12.13   
 ~~~~
-
 2. react / react-dom 설치 ( --save )
 
 ~~~~console
@@ -58,3 +57,26 @@ npm install --save-dev webpack@1.12.13 babel-core@6.5.1 balbel-loader@6.2.2 babe
 ~~~console
 webpack ./public/app.js ./public/bundle.js 
 ~~~
+
+6. webpack.config.js 기본   
+최상위에 webpack.config.js 파일을 생성하고 아래의 코드를 입력 
+
+~~~javascript
+module.exports = {
+    entry: './public/app.js',
+    output: {
+        path: __dirname,
+        filename: './public/bundle.js'
+    },
+    resolve: {
+        extentions: ['', '.js','jsx']
+    }
+};
+~~~
+  
+그리고 console (Terminal) 에서 아래의 명령어 실행   
+~~~console
+webpack 
+~~~
+
+그럼 build.js 가 public/ 밑에 번들되어 저장되게 된다. 
