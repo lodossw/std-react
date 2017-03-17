@@ -12,7 +12,8 @@ npm install -g webpack@1.12.13
 npm install --save react@0.14.7 react-dom@1.14.7  
 ~~~~
 
-3. webpack, babel-* 설치 ( --save-dev ) :: 번들러와 ES6 트랜스파일러는 개발시에만 필요함으로 --save-dev 옵션으로..
+3. webpack, babel-* 설치 ( --save-dev ) :: 번들러와 ES6 트랜스파일러는 개발시에만 필요함으로,  
+ --save-dev 옵션으로..
 
 ~~~~console
 npm install --save-dev webpack@1.12.13 babel-core@6.5.1 balbel-loader@6.2.2 babel-preset-es2015@6.5.0 babel-preset-react@6.5.0   
@@ -52,7 +53,7 @@ npm install --save-dev webpack@1.12.13 babel-core@6.5.1 balbel-loader@6.2.2 babe
 
 5. webpack bundler 실행해보기 
   
-** 명령어는 webpack (작업할(번들될)파일) (번들링(컴파일)된 파일) 임 **  
+**명령어는 webpack (작업할(번들될)파일) (번들링(컴파일)된 파일) 임**  
 
 ~~~console
 webpack ./public/app.js ./public/bundle.js 
