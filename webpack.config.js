@@ -5,6 +5,17 @@ module.exports = {
         filename: './public/bundle.js'
     },
     resolve: {
-        extentions: ['', '.js','jsx']
+        extentions: ['','.js','.jsx']
+    },
+    module:{
+        loaders:[
+            {
+                loader: 'babel-loader',
+                query:{
+                    presets: ['react', 'es2015']
+                },
+                test: /\.jsx?$/
+            }
+        ]
     }
 };
