@@ -1,6 +1,4 @@
-# Step 10 npm 으로 작업하기    
-
-### node 로 작업하기.
+# Step 10. npm 으로 작업하기    
 
 1. webpack bundler 전역 설치 ( -g 옵션 )
 
