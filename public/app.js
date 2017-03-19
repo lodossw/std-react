@@ -1,4 +1,9 @@
-var greeter = require('./components/Greater');
-var HelloWorld = require('./components/HelloWorld.jsx'); 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GreeterContainer from './components/GreeterContainer';
+import App from './components/HelloWorld.jsx';
 
-greeter(); 
+ReactDOM.render(
+    <GreeterContainer/>,
+    document.getElementById("app")    
+);
