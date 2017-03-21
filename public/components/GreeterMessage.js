@@ -21,9 +21,5 @@ class GreeterMessage extends React.Component {
     }
 }
 
-GreeterMessage.defaultProps = {
-    name : 'none',
-    message : 'none'
-}
 
 export default GreeterMessage;

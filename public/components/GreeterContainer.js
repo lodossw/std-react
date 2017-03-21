@@ -37,6 +37,11 @@ class GreeterContainer extends React.Component {
     }
 }
 
+GreeterMessage.defaultProps = {
+    name : 'none',
+    message : 'none'
+}
+
 
 // es6
 export default GreeterContainer;
