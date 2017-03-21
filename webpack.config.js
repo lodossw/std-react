@@ -2,7 +2,7 @@ module.exports = {
     entry: './app/app.js',
     output: {
         path: __dirname,
-        filename: './public/assets/bundle.js'
+        filename: 'public/assets/bundle.js'
     },
     resolve: {
         root: __dirname, 
@@ -13,11 +13,11 @@ module.exports = {
             GreeterForm: 'public/components/GreeterForm.js',
             GreeterMessage: 'public/components/GreeterMessage.js'
         },
-        */
         modulesDirectories: [
             'node_modules',
-            'public/components'
+            'app/components'
         ],
+        */
         extentions: ['', '.js','jsx']
     },
     module:{
@@ -25,9 +25,9 @@ module.exports = {
             {
                 loader: 'babel-loader',
                 query:{
-                    presets: ['react', 'es2015']
+                    presets: ['react', 'es2015', 'stage-0']
                 },
-                test: /\.jsx?$/,
+                test: /\.js?$/,
                 exclude: /{node_modules|bower_components}/
             }
         ]
