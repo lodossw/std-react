@@ -1,4 +1,6 @@
+import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
+
 
 var obj1 = {
     name : 'lodossw',
@@ -11,9 +13,18 @@ var obj2 = {
 }
 
 console.log(obj1); 
-console.log(obj2); 
+console.log(obj2,{obj1}); 
+
+class Test extends Component {
+    render() {
+        var name = 'name';
+        return (
+            <h1>{name}</h1>
+        );
+    }
+}
 
 ReactDOM.render(
-    <h1>Boilerpate app!!</h1>,
+    <Test/>,
     document.getElementById("app") 
 );
