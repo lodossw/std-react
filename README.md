@@ -54,6 +54,7 @@ npm install --save-dev webpack@1.12.13 babel-core@6.5.1 balbel-loader@6.2.2 babe
   
 **명령어는 webpack (작업할(번들될)파일) (번들링(컴파일)된 파일) 임**  
 
+
 ~~~console
 webpack ./public/app.js ./public/bundle.js 
 ~~~
@@ -80,3 +81,32 @@ webpack
 ~~~
 
 그럼 build.js 가 public/ 밑에 번들되어 저장되게 된다. 
+
+7. webpack es6 to es5 transpiler ( babel )  
+
+webpack.config.js 에 babel-loader 를 통해 jsx(es6)를 es5로 변경하도록 추가한다.   
+  
+~~~javascript
+module.exports = {
+    entry: './public/app.js',
+    output: {
+        path: __dirname,
+        filename: './public/bundle.js'
+    },
+    resolve: {
+        extentions: ['', '.js','jsx']
+    },
+    module:{
+        loaders:[
+            {
+                loader: 'babel-loader',
+                query:{
+                    presets: ['react', 'es2015']
+                },
+                test: /\.jsx?$/,
+                exclude: /{node_modules|bower_components}/
+            }
+        ]
+    }
+};
+~~~

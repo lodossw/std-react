@@ -19839,20 +19839,40 @@
 	var GreeterContainer = function (_React$Component) {
 	    _inherits(GreeterContainer, _React$Component);
 
-	    function GreeterContainer() {
+	    function GreeterContainer(props) {
 	        _classCallCheck(this, GreeterContainer);
 
-	        return _possibleConstructorReturn(this, (GreeterContainer.__proto__ || Object.getPrototypeOf(GreeterContainer)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (GreeterContainer.__proto__ || Object.getPrototypeOf(GreeterContainer)).call(this, props));
+
+	        _this.state = {
+	            name: 'none',
+	            message: 'none'
+	        };
+
+	        _this.onGreeterFormHandler = _this.onGreeterFormHandler.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(GreeterContainer, [{
+	        key: 'onGreeterFormHandler',
+	        value: function onGreeterFormHandler(name, message) {
+	            this.setState({
+	                name: name,
+	                message: message
+	            });
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+
+	            var name = this.state.name;
+	            var message = this.state.message;
+
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(_GreeterMessage2.default, { name: 'lodossw' }),
-	                _react2.default.createElement(_GreeterForm2.default, null)
+	                _react2.default.createElement(_GreeterMessage2.default, { name: name, message: message }),
+	                _react2.default.createElement(_GreeterForm2.default, { onGreeterFormHandler: this.onGreeterFormHandler })
 	            );
 	        }
 	    }]);
@@ -19899,6 +19919,7 @@
 	        value: function render() {
 
 	            var name = this.props.name;
+	            var message = this.props.message;
 
 	            return React.createElement(
 	                'div',
@@ -19922,6 +19943,14 @@
 	                    name
 	                ),
 	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'span',
+	                    null,
+	                    'Input Message : ',
+	                    message
+	                ),
+	                React.createElement('br', null),
 	                React.createElement('br', null)
 	            );
 	        }
@@ -19929,6 +19958,11 @@
 
 	    return GreeterMessage;
 	}(React.Component);
+
+	GreeterMessage.defaultProps = {
+	    name: 'none',
+	    message: 'none'
+	};
 
 	exports.default = GreeterMessage;
 
@@ -19959,13 +19993,28 @@
 	var GreeterForm = function (_React$Component) {
 	    _inherits(GreeterForm, _React$Component);
 
-	    function GreeterForm() {
+	    function GreeterForm(props) {
 	        _classCallCheck(this, GreeterForm);
 
-	        return _possibleConstructorReturn(this, (GreeterForm.__proto__ || Object.getPrototypeOf(GreeterForm)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (GreeterForm.__proto__ || Object.getPrototypeOf(GreeterForm)).call(this, props));
+
+	        _this.onFormSubmit = _this.onFormSubmit.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(GreeterForm, [{
+	        key: 'onFormSubmit',
+	        value: function onFormSubmit(e) {
+	            e.preventDefault();
+	            var name = this.refs.name.value;
+	            var message = this.refs.message.value;
+
+	            this.refs.name.value = '';
+	            this.refs.message.value = '';
+
+	            this.props.onGreeterFormHandler(name, message);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -19973,15 +20022,18 @@
 	                null,
 	                _react2.default.createElement(
 	                    'form',
-	                    null,
-	                    _react2.default.createElement('input', { type: 'text' }),
+	                    { onSubmit: this.onFormSubmit },
+	                    _react2.default.createElement('input', { type: 'text', ref: 'name' }),
 	                    ' ',
-	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement(
 	                        'button',
 	                        null,
 	                        'Submit'
-	                    )
+	                    ),
+	                    ' ',
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement('textarea', { ref: 'message' })
 	                )
 	            );
 	        }

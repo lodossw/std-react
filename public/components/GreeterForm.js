@@ -6,17 +6,26 @@ class GreeterForm extends React.Component {
 
     constructor(props) {
         super(props); 
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    onSubmit() {
-
+    onFormSubmit(e) {
+        e.preventDefault();
+        var name = this.refs.name.value; 
+        var message = this.refs.message.value; 
+        
+        this.refs.name.value = '';
+        this.refs.message.value = ''; 
+        
+        this.props.onGreeterFormHandler(name, message);
     }
 
     render() {
         return(
             <div>
-                <form>
-                    <input type="text" /> <button>Submit</button> <br/>
+                <form onSubmit={this.onFormSubmit}>
+                    <input type="text" ref='name'/> <button>Submit</button> <br/><br />
+                    <textarea ref='message'></textarea> 
                </form>
             </div>
         );
