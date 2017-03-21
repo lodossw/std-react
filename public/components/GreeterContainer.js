@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import GreeterMessage from './GreeterMessage'; 
-import GreeterForm from './GreeterForm'; 
+import GreeterMessage from 'GreeterMessage'; 
+import GreeterForm from 'GreeterForm'; 
 
 class GreeterContainer extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class GreeterContainer extends React.Component {
         
         this.state = {
             name : 'none',
-            message : 'none'
+            message : '111none'
         };
 
         this.onGreeterFormHandler = this.onGreeterFormHandler.bind(this);        
@@ -39,7 +39,7 @@ class GreeterContainer extends React.Component {
 
 GreeterMessage.defaultProps = {
     name : 'none',
-    message : 'none'
+    message : '111none'
 }
 
 

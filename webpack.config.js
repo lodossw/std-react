@@ -5,6 +5,19 @@ module.exports = {
         filename: './public/bundle.js'
     },
     resolve: {
+        root: __dirname, 
+        /*
+        alias: {
+            Greeter$ : './public/components'
+            GreeterContainer: 'public/components/GreeterContainer.js',
+            GreeterForm: 'public/components/GreeterForm.js',
+            GreeterMessage: 'public/components/GreeterMessage.js'
+        },
+        */
+        modulesDirectories: [
+            'node_modules',
+            'public/components'
+        ],
         extentions: ['', '.js','jsx']
     },
     module:{

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import GreeterContainer from './components/GreeterContainer';
+import GreeterContainer from 'GreeterContainer';
 
 ReactDOM.render(
     <GreeterContainer/>,
