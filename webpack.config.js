@@ -1,8 +1,8 @@
 module.exports = {
-    entry: './public/app.js',
+    entry: './app/app.js',
     output: {
         path: __dirname,
-        filename: './public/bundle.js'
+        filename: './public/assets/bundle.js'
     },
     resolve: {
         root: __dirname, 
