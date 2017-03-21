@@ -58,10 +58,6 @@
 
 	var _GreeterContainer2 = _interopRequireDefault(_GreeterContainer);
 
-	var _HelloWorld = __webpack_require__(160);
-
-	var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(_GreeterContainer2.default, null), document.getElementById("app"));
@@ -8075,6 +8071,10 @@
 	  }
 	};
 
+	function registerNullComponentID() {
+	  ReactEmptyComponentRegistry.registerNullComponentID(this._rootNodeID);
+	}
+
 	var ReactEmptyComponent = function ReactEmptyComponent(instantiate) {
 	  this._currentElement = null;
 	  this._rootNodeID = null;
@@ -8083,7 +8083,7 @@
 	assign(ReactEmptyComponent.prototype, {
 	  construct: function construct(element) {},
 	  mountComponent: function mountComponent(rootID, transaction, context) {
-	    ReactEmptyComponentRegistry.registerNullComponentID(rootID);
+	    transaction.getReactMountReady().enqueue(registerNullComponentID, this);
 	    this._rootNodeID = rootID;
 	    return ReactReconciler.mountComponent(this._renderedComponent, rootID, transaction, context);
 	  },
@@ -18832,7 +18832,7 @@
 
 	'use strict';
 
-	module.exports = '0.14.7';
+	module.exports = '0.14.8';
 
 /***/ },
 /* 147 */
@@ -19816,14 +19816,25 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _GreeterMessage = __webpack_require__(160);
+
+	var _GreeterMessage2 = _interopRequireDefault(_GreeterMessage);
+
+	var _GreeterForm = __webpack_require__(161);
+
+	var _GreeterForm2 = _interopRequireDefault(_GreeterForm);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var React = __webpack_require__(1);
-	var ReactDOM = __webpack_require__(158);
 
 	var GreeterContainer = function (_React$Component) {
 	    _inherits(GreeterContainer, _React$Component);
@@ -19837,46 +19848,18 @@
 	    _createClass(GreeterContainer, [{
 	        key: 'render',
 	        value: function render() {
-	            return React.createElement(
+	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                React.createElement(
-	                    'h1',
-	                    null,
-	                    'Hello World!!!!!'
-	                )
+	                _react2.default.createElement(_GreeterMessage2.default, { name: 'lodossw' }),
+	                _react2.default.createElement(_GreeterForm2.default, null)
 	            );
 	        }
 	    }]);
 
 	    return GreeterContainer;
-	}(React.Component);
+	}(_react2.default.Component);
 
-	var Dummy = function (_React$Component2) {
-	    _inherits(Dummy, _React$Component2);
-
-	    function Dummy() {
-	        _classCallCheck(this, Dummy);
-
-	        return _possibleConstructorReturn(this, (Dummy.__proto__ || Object.getPrototypeOf(Dummy)).apply(this, arguments));
-	    }
-
-	    _createClass(Dummy, [{
-	        key: 'rendDummyClasser',
-	        value: function rendDummyClasser() {
-	            return React.createElement(
-	                'h1',
-	                null,
-	                'Error'
-	            );
-	        }
-	    }]);
-
-	    return Dummy;
-	}(React.Component);
-
-	// es5 
-	//module.exports = GreeterContainer; 
 	// es6
 
 
@@ -19884,6 +19867,73 @@
 
 /***/ },
 /* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(1);
+
+	var GreeterMessage = function (_React$Component) {
+	    _inherits(GreeterMessage, _React$Component);
+
+	    function GreeterMessage() {
+	        _classCallCheck(this, GreeterMessage);
+
+	        return _possibleConstructorReturn(this, (GreeterMessage.__proto__ || Object.getPrototypeOf(GreeterMessage)).apply(this, arguments));
+	    }
+
+	    _createClass(GreeterMessage, [{
+	        key: 'render',
+	        value: function render() {
+
+	            var name = this.props.name;
+
+	            return React.createElement(
+	                'div',
+	                null,
+	                React.createElement(
+	                    'h1',
+	                    null,
+	                    'Name Caller'
+	                ),
+	                React.createElement(
+	                    'span',
+	                    null,
+	                    'Please, Input your name'
+	                ),
+	                React.createElement('br', null),
+	                React.createElement('br', null),
+	                React.createElement(
+	                    'span',
+	                    null,
+	                    'Input Name : ',
+	                    name
+	                ),
+	                React.createElement('br', null),
+	                React.createElement('br', null)
+	            );
+	        }
+	    }]);
+
+	    return GreeterMessage;
+	}(React.Component);
+
+	exports.default = GreeterMessage;
+
+/***/ },
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19904,37 +19954,43 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /*var React = require('react');
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               var ReactDOM = require('react-dom');*/
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var HelloWorld = function (_React$Component) {
-	    _inherits(HelloWorld, _React$Component);
+	var GreeterForm = function (_React$Component) {
+	    _inherits(GreeterForm, _React$Component);
 
-	    function HelloWorld() {
-	        _classCallCheck(this, HelloWorld);
+	    function GreeterForm() {
+	        _classCallCheck(this, GreeterForm);
 
-	        return _possibleConstructorReturn(this, (HelloWorld.__proto__ || Object.getPrototypeOf(HelloWorld)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (GreeterForm.__proto__ || Object.getPrototypeOf(GreeterForm)).apply(this, arguments));
 	    }
 
-	    _createClass(HelloWorld, [{
+	    _createClass(GreeterForm, [{
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    'h1',
+	                    'form',
 	                    null,
-	                    'Hello World!'
+	                    _react2.default.createElement('input', { type: 'text' }),
+	                    ' ',
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                        'button',
+	                        null,
+	                        'Submit'
+	                    )
 	                )
 	            );
 	        }
 	    }]);
 
-	    return HelloWorld;
+	    return GreeterForm;
 	}(_react2.default.Component);
 
-	exports.default = HelloWorld;
+	exports.default = GreeterForm;
 
 /***/ }
 /******/ ]);
