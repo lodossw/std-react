@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Router, IndexRoute, hashHistory} from 'react-router'; 
+import {Route, Router, IndexRoute, hashHistory, browserHistory} from 'react-router'; 
 
 import Main from 'main'; 
 import Weather from 'weather'; 
@@ -24,7 +24,7 @@ import Examples from 'examples';
 
 
 ReactDOM.render(
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
         <Route path="/" component={Main}>
          <Route path="/about" component={About}/>
          <Route path="/examples" component={Examples}/>
