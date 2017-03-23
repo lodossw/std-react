@@ -1,30 +1,35 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
+import {Route, Router, IndexRoute, hashHistory} from 'react-router'; 
 
+import Main from 'main'; 
+import Weather from 'weather'; 
+import About from 'about';
+import Examples from 'examples';
 
-var obj1 = {
-    name : 'lodossw',
-    location : 'seoul'
-};
+/*
+    var Route = require('react-router').Route; 
+    var obj = {
+        name : 'Andrew',
+        id : 'lodossw',
+        password : '1234'
+    };
 
-var obj2 = {
-    age : 25,
-    ...obj1 = {name:'lee jongseok', location:'Busan', nation:'korea'}
-}
+    var {name} = obj; 
+    var {id, password} = obj 
 
-console.log(obj1); 
-console.log(obj2,{obj1}); 
+    console.log(name);
+    console.log(id + ' --- ' + password);
+*/
 
-class Test extends Component {
-    render() {
-        var name = 'name';
-        return (
-            <h1>{name}</h1>
-        );
-    }
-}
 
 ReactDOM.render(
-    <Test/>,
-    document.getElementById("app") 
-);
+    <Router history={hashHistory}>
+        <Route path="/" component={Main}>
+         <Route path="/about" component={About}/>
+         <Route path="/examples" component={Examples}/>
+         <IndexRoute component={Weather}/>
+        </Route> 
+    </Router>,
+    document.getElementById("app")
+)
