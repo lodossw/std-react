@@ -60,19 +60,19 @@
 
 	var _Index2 = _interopRequireDefault(_Index);
 
-	var _Home = __webpack_require__(217);
+	var _Home = __webpack_require__(226);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _About = __webpack_require__(228);
+	var _About = __webpack_require__(230);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Posts = __webpack_require__(229);
+	var _Posts = __webpack_require__(231);
 
 	var _Posts2 = _interopRequireDefault(_Posts);
 
-	var _app = __webpack_require__(230);
+	var _app = __webpack_require__(232);
 
 	var _app2 = _interopRequireDefault(_app);
 
@@ -25225,7 +25225,7 @@
 
 	var _reactRouter = __webpack_require__(159);
 
-	var _Header = __webpack_require__(232);
+	var _Header = __webpack_require__(217);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
@@ -25307,143 +25307,20 @@
 /* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _BigText = __webpack_require__(218);
-
-	var _BigText2 = _interopRequireDefault(_BigText);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Home = function (_Component) {
-	    _inherits(Home, _Component);
-
-	    function Home() {
-	        _classCallCheck(this, Home);
-
-	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-	    }
-
-	    _createClass(Home, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    _BigText2.default,
-	                    null,
-	                    '\uD648'
-	                )
-	            );
-	        }
-	    }]);
-
-	    return Home;
-	}(_react.Component);
-
-	;
-
-	exports.default = Home;
-
-/***/ },
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _BigText = __webpack_require__(219);
-
-	var _BigText2 = _interopRequireDefault(_BigText);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	/* const */
-	/*
-	const BigText = ({children}) => (
-	    <div className="big-text">
-	        {children}
-	    </div>
-	);
-	*/
-
-	var BigText = function (_Component) {
-	    _inherits(BigText, _Component);
-
-	    function BigText() {
-	        _classCallCheck(this, BigText);
-
-	        return _possibleConstructorReturn(this, (BigText.__proto__ || Object.getPrototypeOf(BigText)).apply(this, arguments));
-	    }
-
-	    _createClass(BigText, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: _BigText2.default['big-text'] },
-	                this.props.children
-	            );
-	        }
-	    }]);
-
-	    return BigText;
-	}(_react.Component);
-
-	;
-
-	exports.default = BigText;
-
-/***/ },
-/* 219 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(220);
+	var content = __webpack_require__(218);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(226)(content, {});
+	var update = __webpack_require__(224)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./BigText.css", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./BigText.css");
+			module.hot.accept("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./Header.css", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./Header.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -25453,23 +25330,26 @@
 	}
 
 /***/ },
-/* 220 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(221)(undefined);
+	exports = module.exports = __webpack_require__(219)(undefined);
 	// imports
 
 
 	// module
-	exports.push([module.id, ".BigText__big-text___1IqY-{\n    margin-top: 3rem;\n    font-size: 7rem;\n    text-align: center;\n}", ""]);
+	exports.push([module.id, ".Header__logo___1ubKy {\n    height: 3.5rem;\n    background-color: #212529;\n    width: 100vw;\n    line-height: 3.5rem;\n    color: white;\n    font-size: 1.5rem;\n    font-weight: bold;\n    text-align: center;\n}\n\n.Header__menu___3Yq8h {\n    background-color: #343a40;\n    height: 3.5rem;\n}\n\n.Header__menu-item___1zE2c {\n    display: inline-block;\n    color: white;\n    font-size: 1rem;\n    line-height: 3.5rem;\n    width: 33.3333%;\n    text-align: center;\n    cursor: pointer;\n    transition: background-color 0.3s;\n    text-decoration: none;\n}\n\n.Header__menu-item___1zE2c:hover {\n    background-color: #495057;\n}\n\n.Header__menu-item___1zE2c:active, .Header__menu-item___1zE2c.Header__active___32pqs {\n    background-color: #1862ab;\n}", ""]);
 
 	// exports
 	exports.locals = {
-		"big-text": "BigText__big-text___1IqY-"
+		"logo": "Header__logo___1ubKy",
+		"menu": "Header__menu___3Yq8h",
+		"menu-item": "Header__menu-item___1zE2c",
+		"active": "Header__active___32pqs"
 	};
 
 /***/ },
-/* 221 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {"use strict";
@@ -25547,10 +25427,10 @@
 
 		return '/*# ' + data + ' */';
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(222).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(220).Buffer))
 
 /***/ },
-/* 222 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -25563,9 +25443,9 @@
 
 	'use strict';
 
-	var base64 = __webpack_require__(223);
-	var ieee754 = __webpack_require__(224);
-	var isArray = __webpack_require__(225);
+	var base64 = __webpack_require__(221);
+	var ieee754 = __webpack_require__(222);
+	var isArray = __webpack_require__(223);
 
 	exports.Buffer = Buffer;
 	exports.SlowBuffer = SlowBuffer;
@@ -27293,7 +27173,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 223 */
+/* 221 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27412,7 +27292,7 @@
 	}
 
 /***/ },
-/* 224 */
+/* 222 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -27503,7 +27383,7 @@
 	};
 
 /***/ },
-/* 225 */
+/* 223 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27515,7 +27395,7 @@
 	};
 
 /***/ },
-/* 226 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -27552,7 +27432,7 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [],
-		fixUrls = __webpack_require__(227);
+		fixUrls = __webpack_require__(225);
 
 	module.exports = function(list, options) {
 		if(false) {
@@ -27811,7 +27691,7 @@
 
 
 /***/ },
-/* 227 */
+/* 225 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -27905,7 +27785,7 @@
 	};
 
 /***/ },
-/* 228 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27920,7 +27800,172 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BigText = __webpack_require__(218);
+	var _BigText = __webpack_require__(227);
+
+	var _BigText2 = _interopRequireDefault(_BigText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_Component) {
+	    _inherits(Home, _Component);
+
+	    function Home() {
+	        _classCallCheck(this, Home);
+
+	        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+	    }
+
+	    _createClass(Home, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    _BigText2.default,
+	                    null,
+	                    '\uD648'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Home;
+	}(_react.Component);
+
+	;
+
+	exports.default = Home;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _BigText = __webpack_require__(228);
+
+	var _BigText2 = _interopRequireDefault(_BigText);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	/* const */
+	/*
+	const BigText = ({children}) => (
+	    <div className="big-text">
+	        {children}
+	    </div>
+	);
+	*/
+
+	var BigText = function (_Component) {
+	    _inherits(BigText, _Component);
+
+	    function BigText() {
+	        _classCallCheck(this, BigText);
+
+	        return _possibleConstructorReturn(this, (BigText.__proto__ || Object.getPrototypeOf(BigText)).apply(this, arguments));
+	    }
+
+	    _createClass(BigText, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: _BigText2.default['big-text'] },
+	                this.props.children
+	            );
+	        }
+	    }]);
+
+	    return BigText;
+	}(_react.Component);
+
+	;
+
+	exports.default = BigText;
+
+/***/ },
+/* 228 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(229);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(224)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./BigText.css", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./BigText.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(219)(undefined);
+	// imports
+
+
+	// module
+	exports.push([module.id, ".BigText__big-text___1IqY-{\n    margin-top: 3rem;\n    font-size: 7rem;\n    text-align: center;\n}", ""]);
+
+	// exports
+	exports.locals = {
+		"big-text": "BigText__big-text___1IqY-"
+	};
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _BigText = __webpack_require__(227);
 
 	var _BigText2 = _interopRequireDefault(_BigText);
 
@@ -27964,7 +28009,7 @@
 	exports.default = About;
 
 /***/ },
-/* 229 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27979,7 +28024,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BigText = __webpack_require__(218);
+	var _BigText = __webpack_require__(227);
 
 	var _BigText2 = _interopRequireDefault(_BigText);
 
@@ -28023,16 +28068,16 @@
 	exports.default = Posts;
 
 /***/ },
-/* 230 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(231);
+	var content = __webpack_require__(233);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(226)(content, {});
+	var update = __webpack_require__(224)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28049,10 +28094,10 @@
 	}
 
 /***/ },
-/* 231 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(221)(undefined);
+	exports = module.exports = __webpack_require__(219)(undefined);
 	// imports
 
 
@@ -28061,51 +28106,6 @@
 
 	// exports
 
-
-/***/ },
-/* 232 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(233);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(226)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./Header.css", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!./Header.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 233 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(221)(undefined);
-	// imports
-
-
-	// module
-	exports.push([module.id, ".Header__logo___1ubKy {\n    height: 3.5rem;\n    background-color: #212529;\n    width: 100vw;\n    line-height: 3.5rem;\n    color: white;\n    font-size: 1.5rem;\n    font-weight: bold;\n    text-align: center;\n}\n\n.Header__menu___3Yq8h {\n    background-color: #343a40;\n    height: 3.5rem;\n}\n\n.Header__menu-item___1zE2c {\n    display: inline-block;\n    color: white;\n    font-size: 1rem;\n    line-height: 3.5rem;\n    width: 33.3333%;\n    text-align: center;\n    cursor: pointer;\n    transition: background-color 0.3s;\n    text-decoration: none;\n}\n\n.Header__menu-item___1zE2c:hover {\n    background-color: #495057;\n}\n\n.Header__menu-item___1zE2c:active, .Header__menu-item___1zE2c.Header__active___32pqs {\n    background-color: #1862ab;\n}", ""]);
-
-	// exports
-	exports.locals = {
-		"logo": "Header__logo___1ubKy",
-		"menu": "Header__menu___3Yq8h",
-		"menu-item": "Header__menu-item___1zE2c",
-		"active": "Header__active___32pqs"
-	};
 
 /***/ }
 /******/ ]);
