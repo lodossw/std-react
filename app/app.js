@@ -1,35 +1,22 @@
-import React,{Component} from 'react';
+//React-router v3
+import React, {Component} from 'react'; 
 import ReactDOM from 'react-dom';
-import {Route, Router, IndexRoute, hashHistory} from 'react-router'; 
+import {Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import Main from 'main'; 
-import Weather from 'weather'; 
-import About from 'about';
-import Examples from 'examples';
+import Index from 'Index';
+import Home from 'Home';
+import About from 'About';
+import Posts from 'Posts';
 
-/*
-    var Route = require('react-router').Route; 
-    var obj = {
-        name : 'Andrew',
-        id : 'lodossw',
-        password : '1234'
-    };
-
-    var {name} = obj; 
-    var {id, password} = obj 
-
-    console.log(name);
-    console.log(id + ' --- ' + password);
-*/
-
+import './app.css';
 
 ReactDOM.render(
-    <Router history={hashHistory}>
-        <Route path="/" component={Main}>
-         <Route path="/about" component={About}/>
-         <Route path="/examples" component={Examples}/>
-         <IndexRoute component={Weather}/>
+    <Router history={browserHistory}>
+        <Route path='/' component={Index}>
+            <IndexRoute component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='/post' component={Posts} />
         </Route> 
-    </Router>,
-    document.getElementById("app")
-)
+    </Router>, 
+    document.getElementById('app')
+);

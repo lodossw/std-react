@@ -8,7 +8,8 @@ module.exports = {
         root: __dirname, 
         modulesDirectories: [
             'node_modules',
-            'app/components'
+            'app/components',
+            'app/containers'
         ],
         /*
         alias: {
@@ -22,7 +23,7 @@ module.exports = {
             'app/components'
         ],
         */
-        extentions: ['', '.js','jsx']
+        extentions: ['', '.js','jsx','css']
     },
     module:{
         loaders:[
@@ -33,6 +34,10 @@ module.exports = {
                 },
                 test: /\.js?$/,
                 exclude: /{node_modules|bower_components}/
+            },
+            {       
+                test: /\.css$/,
+                loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
             }
         ]
     }
