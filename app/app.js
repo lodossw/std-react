@@ -8,14 +8,14 @@ import Home from 'Home';
 import About from 'About';
 import Posts from 'Posts';
 
-import './app.css';
+import styles from './app.css';
 
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path='/' component={Index}>
             <IndexRoute component={Home} />
             <Route path='/about' component={About} />
-            <Route path='/post' component={Posts} />
+            <Route path='/posts' component={Posts} />
         </Route> 
     </Router>, 
     document.getElementById('app')

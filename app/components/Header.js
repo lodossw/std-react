@@ -1,23 +1,34 @@
 import React, {Component} from 'react'; 
-import './Header.css';
+import {Link} from 'react-router';
 
+import styles from './Header.css';
+
+//-- Template Liternal 문법 숙지 
 const MenuItem = ({active, children, to}) => (
-    <div className="menu-item">
+    <Link to={to} className={styles["menu-item"] + (active ? " " + styles.active : "")}>  
         {children}
-    </div>
+    </Link>
 );
 
 class Header extends Component {
+
+    static contextTypes = {
+        router: React.PropTypes.object
+    }
+
     render(){
+        
+        var {router} = this.context;
+
         return(
             <div>
-                <div className="logo">
-                    velopert
+                <div className={styles.logo}>
+                    Hello
                 </div>
-                <div className="menu">
-                    <MenuItem>홈</MenuItem>
-                    <MenuItem>소개</MenuItem> 
-                    <MenuItem>포스트</MenuItem>
+                <div className={styles.menu}>
+                    <MenuItem to="/" active={router.isActive('/', true)}>홈</MenuItem>
+                    <MenuItem to="/about" active={router.isActive('/about', true)}>소개</MenuItem> 
+                    <MenuItem to="/posts" active={router.isActive('/posts', true)}>포스트</MenuItem>
                 </div>
             </div> 
         );
