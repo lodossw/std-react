@@ -1,29 +1,17 @@
 module.exports = {
-    entry: './app/app.js',
+    entry: './src/app.js',
     output: {
         path: __dirname,
-        filename: 'public/assets/bundle.js'
+        filename: 'public/assets/js/app.js'
     },
     resolve: {
         root: __dirname, 
         modulesDirectories: [
             'node_modules',
-            'app/components',
-            'app/containers'
+            'src/controllers',
+            'src/components'
         ],
-        /*
-        alias: {
-            Greeter$ : './public/components'
-            GreeterContainer: 'public/components/GreeterContainer.js',
-            GreeterForm: 'public/components/GreeterForm.js',
-            GreeterMessage: 'public/components/GreeterMessage.js'
-        },
-        modulesDirectories: [
-            'node_modules',
-            'app/components'
-        ],
-        */
-        extentions: ['', '.js','jsx','css']
+        extensions: ['', '.js','jsx','css']
     },
     module:{
         loaders:[

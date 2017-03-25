@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import BigText from 'BigText'; 
+import styles from './css/style.css';   
 
 class About extends Component {
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <BigText>소개</BigText>
+                <h1 className={styles['big-text']}>About</h1>
             </div>
         );
     }
