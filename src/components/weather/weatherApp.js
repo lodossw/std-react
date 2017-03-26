@@ -1,27 +1,26 @@
-var React = require('react');
+'use strict';
 
-var styles = require('./css/style.css');
+/*var React = require('react');
+var WeatherForm = require('./weatherForm');*/
+import React, {Component} from 'react'; 
+import WeatherForm from './weatherForm';
+import WeatherMessage from './weatherMessage';
+
 
 
 class WeatherApp extends React.Component {
+
+
     render() {
         return (
             <div>
-                /*<WeatherForm />*/
-                1111
+                <WeatherForm>City Weather</WeatherForm>
+                <WeatherMessage />
             </div>
         )
     };
-}
 
-/* 
-const WeatherApp = () => {
-    return (   
-        <div>
-            <WeatherForm />
-        </div>
-    );
-};
-*/
+} 
 
-module.exports = WeatherApp;
+
+export default WeatherApp;

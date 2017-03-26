@@ -23,7 +23,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={MainController}>
             <IndexRoute component={Home} />
-            <Route path="/app-weather" component={WeatherApp} />
+            <Route path="/weather" component={WeatherApp} />
             <Route path="/about" component={About} />
             <Route path="/Posts" component={Posts} />
         </Route>

@@ -6,7 +6,7 @@ class Home extends Component {
         return (
             <div>
                 <h1 className={styles['big-text']}>
-                    <a href='/about'>HOME</a>
+                  Home
                 </h1>
             </div>
         );

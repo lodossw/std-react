@@ -36,7 +36,7 @@ class TopNavigation extends Component {
                 </div>
                 <div className={styles.menu}>
                     <MenuItem to="/" active={router.isActive('/', true)}>Home</MenuItem>
-                    <MenuItem to="/app-weather" active={router.isActive('/app-weather', true)}>App</MenuItem> 
+                    <MenuItem to="/weather" active={router.isActive('/weather', true)}>Weather</MenuItem> 
                     <MenuItem to="/posts" active={router.isActive('/posts', true)}>Post</MenuItem> 
                     <MenuItem to="/about" active={router.isActive('/about', true)}>About</MenuItem>
                 </div>
