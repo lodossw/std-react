@@ -4,7 +4,7 @@ import Home from './contents/home';
 import About from './contents/about';
 import Posts from './contents/posts';
 import Post from './contents/post';
-import WeatherApp from './contents/weatherApp';
+import WeatherApp from './weather/weatherApp';
 
 export 
 { 
