@@ -9,7 +9,8 @@ module.exports = {
         modulesDirectories: [
             'node_modules',
             'src/controllers',
-            'src/components'
+            'src/components',
+            'src/services'
         ],
         extensions: ['', '.js','jsx','css']
     },
