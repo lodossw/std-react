@@ -9,7 +9,8 @@ import {
     About,
     Posts,
     Post,
-    WeatherApp
+    WeatherApp,
+    WeatherES6App
 } from './components'
 
 import {
@@ -23,7 +24,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component={MainController}>
             <IndexRoute component={Home} />
-            <Route path="/weather" component={WeatherApp} />
+            <Route path="/weather" component={WeatherES6App} />
             <Route path="/about" component={About} />
             <Route path="/Posts" component={Posts} />
         </Route>

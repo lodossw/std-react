@@ -58,9 +58,9 @@
 
 	var _components = __webpack_require__(233);
 
-	var _controllers = __webpack_require__(279);
+	var _controllers = __webpack_require__(280);
 
-	var _app = __webpack_require__(281);
+	var _app = __webpack_require__(282);
 
 	var _app2 = _interopRequireDefault(_app);
 
@@ -74,7 +74,7 @@
 	        _reactRouter.Route,
 	        { path: '/', component: _controllers.MainController },
 	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _components.Home }),
-	        _react2.default.createElement(_reactRouter.Route, { path: '/weather', component: _components.WeatherApp }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/weather', component: _components.WeatherES6App }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _components.About }),
 	        _react2.default.createElement(_reactRouter.Route, { path: '/Posts', component: _components.Posts })
 	    )
@@ -26820,7 +26820,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.WeatherApp = exports.Post = exports.Posts = exports.About = exports.Home = exports.TopNavigation = undefined;
+	exports.WeatherES6App = exports.WeatherApp = exports.Post = exports.Posts = exports.About = exports.Home = exports.TopNavigation = undefined;
 
 	var _topNavigation = __webpack_require__(234);
 
@@ -26846,6 +26846,10 @@
 
 	var _weatherApp2 = _interopRequireDefault(_weatherApp);
 
+	var _weatherES6App = __webpack_require__(279);
+
+	var _weatherES6App2 = _interopRequireDefault(_weatherES6App);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.TopNavigation = _topNavigation2.default;
@@ -26854,6 +26858,7 @@
 	exports.Posts = _posts2.default;
 	exports.Post = _post2.default;
 	exports.WeatherApp = _weatherApp2.default;
+	exports.WeatherES6App = _weatherES6App2.default;
 
 /***/ },
 /* 234 */
@@ -31480,9 +31485,96 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _weatherForm = __webpack_require__(251);
+
+	var _weatherForm2 = _interopRequireDefault(_weatherForm);
+
+	var _weatherMessage = __webpack_require__(252);
+
+	var _weatherMessage2 = _interopRequireDefault(_weatherMessage);
+
+	var _openWeatherClassApp = __webpack_require__(284);
+
+	var _openWeatherClassApp2 = _interopRequireDefault(_openWeatherClassApp);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WeatherES6App = function (_Component) {
+	    _inherits(WeatherES6App, _Component);
+
+	    function WeatherES6App(props) {
+	        _classCallCheck(this, WeatherES6App);
+
+	        var _this = _possibleConstructorReturn(this, (WeatherES6App.__proto__ || Object.getPrototypeOf(WeatherES6App)).call(this, props));
+
+	        _this.onSearch = _this.onSearch.bind(_this);
+	        _this.state = {
+	            temp: '',
+	            location: ''
+	        };
+	        return _this;
+	    }
+
+	    _createClass(WeatherES6App, [{
+	        key: 'onSearch',
+	        value: function onSearch(data) {
+	            var obj = this;
+	            new _openWeatherClassApp2.default().getTemp(data.location).then(function (result) {
+	                obj.setState({
+	                    temp: result,
+	                    location: data.location
+	                });
+	            }).catch(function (err) {
+	                console.log(err);
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+
+	            var temp, location;
+	            temp = this.state.temp;
+	            location = this.state.location;
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_weatherForm2.default, { onSearch: this.onSearch }),
+	                _react2.default.createElement(_weatherMessage2.default, { temp: temp, location: location })
+	            );
+	        }
+	    }]);
+
+	    return WeatherES6App;
+	}(_react.Component);
+
+	exports.default = WeatherES6App;
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.MainController = undefined;
 
-	var _mainController = __webpack_require__(280);
+	var _mainController = __webpack_require__(281);
 
 	var _mainController2 = _interopRequireDefault(_mainController);
 
@@ -31491,7 +31583,7 @@
 	exports.MainController = _mainController2.default;
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31545,13 +31637,13 @@
 	exports.default = MainController;
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(282);
+	var content = __webpack_require__(283);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(242)(content, {});
@@ -31571,7 +31663,7 @@
 	}
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(237)(undefined);
@@ -31583,6 +31675,56 @@
 
 	// exports
 
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _axios = __webpack_require__(254);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var APPID = '4df6dacf98db93283d3640aa6a37a7c2';
+	var OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?units=metric&appid=4df6dacf98db93283d3640aa6a37a7c2';
+
+	var OpenWeatherClassApp = function () {
+	    function OpenWeatherClassApp() {
+	        _classCallCheck(this, OpenWeatherClassApp);
+	    }
+
+	    _createClass(OpenWeatherClassApp, [{
+	        key: 'getTemp',
+	        value: function getTemp(location) {
+	            var encodedLocation = encodeURIComponen(location);
+	            var requestUrl = OPEN_WEATHER_MAP_URL + '&q=' + encodedLocation;
+	            return _axios2.default.get(requestUrl).then(function (res) {
+	                if (res.data.cod && res.data.message) {
+	                    throw new Error(res.data.message);
+	                } else {
+	                    return res.data.main.temp;
+	                }
+	            }).catch(function (res) {
+	                throw new Error(res.data.message);
+	            });
+	        }
+	    }]);
+
+	    return OpenWeatherClassApp;
+	}();
+
+	exports.default = OpenWeatherClassApp;
 
 /***/ }
 /******/ ]);

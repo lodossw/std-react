@@ -5,6 +5,7 @@ import About from './contents/about';
 import Posts from './contents/posts';
 import Post from './contents/post';
 import WeatherApp from './weather/weatherApp';
+import WeatherES6App from './weather/weatherES6App';
 
 export 
 { 
@@ -13,5 +14,6 @@ export
     About,
     Posts,
     Post,
-    WeatherApp
+    WeatherApp,
+    WeatherES6App
 }; 
